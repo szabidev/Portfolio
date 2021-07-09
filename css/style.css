@@ -1,0 +1,301 @@
+:root {
+  /* COLORS */
+  --primary-color: #1d3557;
+  --secondary-color: #457b9d;
+  --tertiary-color: #a8dadc;
+  --grey-color-1: #8d99ae;
+  --grey-color-2: #f1faee;
+  --optional-color: #e63946;
+  --optional-color-2: #d90429;
+  /* FONTS */
+  --primary-font: Montserrat, sans-serif;
+  --secondary-font: "Open sans", sans-serif;
+  --logo-font: "Yomogi", cursive;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--grey-color-2);
+  font-family: var(--primary-font);
+  font-size: 5em;
+  scroll-behavior: smooth;
+}
+
+/* ==================================== NAVBAR ================================== */
+.this {
+  color: var(--optional-color);
+  font-size: 2rem;
+  padding-top: 1em;
+  text-align: center;
+  font-family: var(--logo-font);
+  cursor: pointer;
+}
+
+.navbar-wrapper {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  width: 25rem;
+  height: 100vh;
+  position: fixed;
+}
+
+.navbar-list {
+  margin-top: 1rem;
+}
+
+.navbar-list-item {
+  font-size: 4rem;
+  text-align: center;
+  padding: 2.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(225, 225, 225, 0.15);
+  transition: all 0.2s;
+}
+
+.navbar-list-item:hover {
+  background-color: var(--tertiary-color);
+  cursor: pointer;
+}
+
+.navbar-list-item:hover .navbar-list-link {
+  color: var(--optional-color);
+  transform: scale(1.1);
+  letter-spacing: 0.35em;
+}
+
+.navbar-list-link {
+  color: var(--grey-color-2);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  display: block;
+  transition: all 0.2s;
+}
+
+/* =================================== ICONS =================================== */
+.social-media {
+  border-top: 1px solid rgba(225, 225, 225, 0.15);
+  font-size: 6em;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fa-github-square,
+.fa-linkedin,
+.fa-facebook-square,
+.fa-instagram {
+  color: var(--grey-color-2);
+}
+
+.fa-github-square:hover,
+.fa-linkedin:hover,
+.fa-facebook-square:hover,
+.fa-instagram:hover {
+  transform: scale(1.2);
+  transition: all 200ms;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  color: var(--optional-color);
+}
+
+/* ================================== WELCOME SECTION ============================= */
+
+#welcome-section {
+  margin-left: 25rem;
+  width: 100%;
+  height: 100vh;
+}
+
+.welcome {
+  font-size: 6rem;
+  margin-top: 8rem;
+  text-align: center;
+  font-weight: 200;
+  color: var(--secondary-color);
+}
+
+.underline {
+  width: 40%;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--optional-color);
+  margin-top: 0.5em;
+  border-radius: 1em;
+}
+
+.description {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.image-wrapper {
+  margin-left: 2rem;
+  align-self: center;
+}
+.szabi-1 {
+  width: 216px;
+  height: 100%;
+  border-radius: 50%;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 3rem;
+}
+
+.image-name {
+  margin-top: 2rem;
+  font-size: 5rem;
+  color: var(--secondary-color);
+}
+
+.welcome-text {
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  margin-top: 6rem;
+  line-height: 1.6;
+  color: var(--secondary-color);
+}
+
+/* =========================== SKILLS SECTION ========================================= */
+.skills-section {
+  margin-left: 25rem;
+  /* height: 100vh; */
+  background-color: var(--tertiary-color);
+}
+
+.skills-section-title {
+  text-align: center;
+  padding-top: 1.25em;
+  font-size: 6rem;
+  color: var(--optional-color);
+  font-weight: 200;
+}
+
+.skills-underline {
+  height: 0.3em;
+  background-color: var(--primary-color);
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 1em;
+  margin-top: 0.5em;
+}
+
+.skills-wrapper {
+  width: 60%;
+  height: auto;
+  margin: 10rem auto 0;
+}
+
+.loading-bar {
+  font-size: 2em;
+  color: var(--optional-color);
+  letter-spacing: 1px;
+  display: inline-block;
+  width: 80%;
+  margin-bottom: 15px;
+  /* add pos relative to place % signs */
+  position: relative;
+}
+
+.loading-bar span {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 1em;
+  border-radius: 5em;
+  background-color: var(--primary-color);
+}
+
+.loading-bar span::before {
+  position: absolute;
+  content: "";
+  top: 6px;
+  left: 6px;
+  width: 80%;
+  height: 50%;
+  background-color: var(--optional-color);
+  border-radius: 5em;
+  animation: loading 4s ease;
+}
+/*  make the loading start on scroll down */
+@keyframes loading {
+  from {
+    width: 0;
+  }
+}
+
+.loading-bar:nth-child(1) span::before {
+  width: 95%;
+}
+.loading-bar:nth-child(2) span::before {
+  width: 90%;
+}
+.loading-bar:nth-child(3) span::before {
+  width: 75%;
+}
+.loading-bar:nth-child(4) span::before {
+  width: 55%;
+}
+.loading-bar:nth-child(5) span::before {
+  width: 40%;
+}
+.loading-bar:nth-child(6) span::before {
+  width: 60%;
+}
+
+.loading-bar abbr {
+  background-color: var(--optional-color);
+  color: var(--primary-color);
+  display: inline-block;
+  width: 2.5em;
+  height: 2.35em;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 2.5em;
+  position: absolute;
+  top: 36px;
+  z-index: 1;
+  font-size: 1.25rem;
+  box-shadow: 0 5px 20px var(--primary-color);
+  animation: count 4s ease;
+}
+
+/* Maybe change this animation */
+
+@keyframes count {
+  from {
+    left: 0%;
+  }
+}
+
+.loading-bar:nth-child(1) abbr {
+  left: 95%;
+}
+.loading-bar:nth-child(2) abbr {
+  left: 90%;
+}
+.loading-bar:nth-child(3) abbr {
+  left: 75%;
+}
+.loading-bar:nth-child(4) abbr {
+  left: 55%;
+}
+.loading-bar:nth-child(5) abbr {
+  left: 40%;
+}
+.loading-bar:nth-child(6) abbr {
+  left: 60%;
+}
