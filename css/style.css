@@ -172,7 +172,6 @@ body {
 /* =========================== SKILLS SECTION ========================================= */
 .skills-section {
   margin-left: 25rem;
-  /* height: 100vh; */
   background-color: var(--tertiary-color);
 }
 
@@ -238,13 +237,13 @@ body {
 }
 
 .loading-bar:nth-child(1) span::before {
-  width: 95%;
-}
-.loading-bar:nth-child(2) span::before {
   width: 90%;
 }
+.loading-bar:nth-child(2) span::before {
+  width: 80%;
+}
 .loading-bar:nth-child(3) span::before {
-  width: 75%;
+  width: 70%;
 }
 .loading-bar:nth-child(4) span::before {
   width: 55%;
@@ -271,6 +270,7 @@ body {
   font-size: 1.25rem;
   box-shadow: 0 5px 20px var(--primary-color);
   animation: count 4s ease;
+  border: 1px solid var(--primary-color);
 }
 
 /* Maybe change this animation */
@@ -282,13 +282,13 @@ body {
 }
 
 .loading-bar:nth-child(1) abbr {
-  left: 95%;
-}
-.loading-bar:nth-child(2) abbr {
   left: 90%;
 }
+.loading-bar:nth-child(2) abbr {
+  left: 80%;
+}
 .loading-bar:nth-child(3) abbr {
-  left: 75%;
+  left: 70%;
 }
 .loading-bar:nth-child(4) abbr {
   left: 55%;
@@ -298,4 +298,61 @@ body {
 }
 .loading-bar:nth-child(6) abbr {
   left: 60%;
+}
+
+/* ============================================== PROJECTS SECTION =============================== */
+#projects {
+  margin-left: 25rem;
+}
+
+.projects-section-title {
+  text-align: center;
+  margin-top: 1.1em;
+  font-size: 6rem;
+  font-weight: 200;
+  color: var(--secondary-color);
+}
+
+.projects-underline {
+  width: 40%;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--optional-color);
+  margin-top: 0.5em;
+  border-radius: 1em;
+}
+
+.projects {
+  width: 60em;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 4em;
+  background-color: green;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  /* grid-auto-rows: minmax(100px, auto); */
+  grid-template-areas:
+    "image image image . title ."
+    "image image image . . ."
+    "image image image . description ."
+    "image image image . demo github";
+}
+
+.project-image {
+  min-width: 100%;
+  grid-area: image;
+}
+/* MAKE IT A GRID INSTEAD OF FLEXBOX ???? */
+/* MAke it grid with grid areas */
+.project-title {
+  grid-area: title;
+}
+.project-description {
+  grid-area: description;
+}
+.project-demo {
+  grid-area: demo;
+}
+.project-github {
+  grid-area: github;
 }
