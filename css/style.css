@@ -323,36 +323,63 @@ body {
 }
 
 .projects {
-  width: 60em;
+  width: 70%;
   height: auto;
   margin: 0 auto;
   margin-top: 4em;
-  background-color: green;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  /* grid-auto-rows: minmax(100px, auto); */
-  grid-template-areas:
-    "image image image . title ."
-    "image image image . . ."
-    "image image image . description ."
-    "image image image . demo github";
+  background-color: var(--tertiary-color);
+  border-radius: 5px;
+  display: flex;
+}
+/* NOT Working */
+.project-image {
+  height: auto;
 }
 
-.project-image {
-  min-width: 100%;
-  grid-area: image;
+.project-image img {
+  width: 30rem;
 }
-/* MAKE IT A GRID INSTEAD OF FLEXBOX ???? */
-/* MAke it grid with grid areas */
+
+.description-wrapper {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .project-title {
-  grid-area: title;
+  font-size: 4em;
+  margin: 1.5em 0;
+  color: var(--secondary-color);
 }
+
 .project-description {
-  grid-area: description;
+  font-size: 2.3em;
+  margin-bottom: 2em;
+  color: var(--secondary-color);
 }
-.project-demo {
-  grid-area: demo;
+
+.button-container a {
+  display: inline-block;
+  font-size: 4em;
+  margin-bottom: 2em;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: var(--optional-color);
+  /* add the border on hover and scale it up */
+  padding: 5px;
+  transition: all 0.2s;
+  backface-visibility: hidden;
 }
-.project-github {
-  grid-area: github;
+
+.button-container a:first-child {
+  margin-right: 2em;
+}
+
+.button-container a:hover {
+  border: 1px solid black;
+  box-shadow: 0 1rem 2.5rem rgb(0, 0, 0, 40%);
+  transform: scale(1.1);
 }
