@@ -26,6 +26,9 @@ body {
   background-color: var(--grey-color-2);
   font-family: var(--primary-font);
   font-size: 5em;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -196,6 +199,7 @@ body {
   width: 60%;
   height: auto;
   margin: 10rem auto 0;
+  padding-bottom: 5rem;
 }
 
 .loading-bar {
@@ -303,6 +307,12 @@ body {
 /* ============================================== PROJECTS SECTION =============================== */
 #projects {
   margin-left: 25rem;
+  backface-visibility: hidden;
+  padding-bottom: 10rem;
+}
+
+.projects-container {
+  backface-visibility: hidden;
 }
 
 .projects-section-title {
@@ -330,6 +340,7 @@ body {
   background-color: var(--tertiary-color);
   border-radius: 5px;
   display: flex;
+  /* backface-visibility: hidden; */
 }
 /* NOT Working */
 .project-image {
@@ -338,6 +349,7 @@ body {
 
 .project-image img {
   width: 30rem;
+  /* height: 20rem; */
 }
 
 .description-wrapper {
@@ -371,7 +383,7 @@ body {
   /* add the border on hover and scale it up */
   padding: 5px;
   transition: all 0.2s;
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 .button-container a:first-child {
@@ -379,7 +391,221 @@ body {
 }
 
 .button-container a:hover {
-  border: 1px solid black;
+  border: 1px solid var(--optional-color);
   box-shadow: 0 1rem 2.5rem rgb(0, 0, 0, 40%);
   transform: scale(1.1);
+  /* backface-visibility: hidden; */
+}
+
+/* ==================================== RESUME SECTION ========================== */
+.resume-section {
+  margin-left: 25rem;
+  padding-bottom: 10rem;
+  background-color: var(--tertiary-color);
+}
+
+.resume-section-title {
+  text-align: center;
+  font-size: 6rem;
+  color: var(--optional-color);
+  font-weight: 200;
+}
+
+.resume-underline {
+  height: 0.3em;
+  background-color: var(--primary-color);
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 1em;
+  margin-top: 0.5em;
+}
+
+.image-container {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.image1-container,
+.image2-container {
+  width: 200px;
+  height: 200px;
+}
+
+.image1-container img,
+.image2-container img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+/* ===================================== CONTACT SECTION ========================== */
+.contact-section {
+  margin-left: 25rem;
+}
+
+.contact-section-title {
+  margin-top: 1.1em;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 200;
+  color: var(--secondary-color);
+}
+
+.contact-underline {
+  width: 40%;
+  height: 0.3em;
+  margin: 0 auto;
+  background-color: var(--optional-color);
+  margin-top: 0.5em;
+  border-radius: 1em;
+}
+
+.contact-form {
+  width: 50%;
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  border-radius: 5px;
+}
+/*  add functionality with JS */
+.display-message {
+  width: 80%;
+  height: 6rem;
+  background-color: #52b788;
+  margin: 0 auto;
+  visibility: visible;
+  position: relative;
+  border-radius: 5px;
+  visibility: hidden;
+}
+
+.display-message p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+  font-size: 3rem;
+  padding: 2rem 0;
+  color: var(--grey-color-2);
+}
+
+.input-container {
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.input-container label {
+  font-size: 2rem;
+  /* add inline block so that i can apply margin */
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  font-size: 2rem;
+}
+
+.button-container {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.submit-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  outline: none;
+  font-size: 2rem;
+  background-color: var(--primary-color);
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+  color: var(--grey-color-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  cursor: pointer;
+}
+
+/* ===================================== FOOTER SECTION =============================== */
+.footer {
+  margin-left: 25rem;
+  background-color: var(--tertiary-color);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contact-information {
+  margin-left: -7rem;
+}
+
+.contact-information p {
+  font-size: 1.25rem;
+  padding-top: 0.55rem;
+}
+
+.contact-information i {
+  display: inline-block;
+  font-size: 3rem;
+  margin-right: 1.5rem;
+  vertical-align: middle;
+  color: var(--optional-color-2);
+}
+
+.address,
+.phone-number,
+.email-address {
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+}
+
+.fa-arrow-circle-up {
+  font-size: 10rem;
+  color: var(--primary-color);
+  padding-top: 2rem;
+}
+
+.fa-arrow-circle-up:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+}
+
+.copyright {
+  font-size: 2rem;
+  padding-top: 6rem;
+}
+
+.copyright span {
+  font-size: 2rem;
+}
+
+.copyright-icon {
+  vertical-align: middle;
+}
+
+.fa-coffee,
+.fa-heart {
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  color: var(--optional-color-2);
 }
