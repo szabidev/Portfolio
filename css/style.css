@@ -110,8 +110,6 @@ html {
 .fa-instagram:hover {
   transform: scale(1.2);
   transition: all 200ms;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   color: var(--optional-color);
 }
 
@@ -277,7 +275,7 @@ html {
   border: 1px solid var(--primary-color);
 }
 
-/* Maybe change this animation */
+/* Maybe change this animation - start animation when scroll down, at animation finish card with thext */
 
 @keyframes count {
   from {
@@ -347,11 +345,13 @@ html {
   height: auto;
 }
 
+/* Remake the images, scale them */
 .project-image img {
-  width: 30rem;
-  /* height: 20rem; */
+  width: 100%;
+  height: auto;
 }
 
+/* backface visibility does not work on animation, resolve it */
 .description-wrapper {
   text-align: center;
   width: 100%;
@@ -359,10 +359,16 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .project-title {
   font-size: 4em;
+  font-weight: 300;
   margin: 1.5em 0;
   color: var(--secondary-color);
 }
@@ -384,6 +390,11 @@ html {
   padding: 5px;
   transition: all 0.2s;
   /* backface-visibility: hidden; */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .button-container a:first-child {
@@ -394,6 +405,12 @@ html {
   border: 1px solid var(--optional-color);
   box-shadow: 0 1rem 2.5rem rgb(0, 0, 0, 40%);
   transform: scale(1.1);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+
   /* backface-visibility: hidden; */
 }
 
@@ -409,6 +426,7 @@ html {
   font-size: 6rem;
   color: var(--optional-color);
   font-weight: 200;
+  padding-top: 6rem;
 }
 
 .resume-underline {
@@ -438,6 +456,73 @@ html {
   max-width: 100%;
   max-height: 100%;
   border-radius: 50%;
+}
+
+.about-me {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 4rem;
+}
+
+.information-grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.information-grid h2 {
+  font-size: 3em;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.work-experience {
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+.education {
+  grid-column-start: 6;
+  grid-column-end: 12;
+}
+
+/*  fix the borders */
+.resume-item {
+  border-left: 1px solid var(--optional-color-2);
+  margin-bottom: 5rem;
+}
+
+.resume-item h4 {
+  font-size: 2.5em;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.resume-item h5 {
+  text-align: center;
+  font-size: 2em;
+  padding: 1em 0;
+}
+
+.resume-item p {
+  text-align: center;
+  font-size: 2em;
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+.bartending h5 {
+  font-size: 3em;
+  font-style: italic;
+}
+
+.bartending p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.bartending:first-of-type {
+  margin-top: 6rem;
 }
 
 /* ===================================== CONTACT SECTION ========================== */
@@ -531,6 +616,7 @@ html {
   margin-bottom: 1rem;
 }
 
+/*  Add success message or error message on Submit */
 .submit-btn {
   display: inline-block;
   width: 100%;
@@ -560,6 +646,7 @@ html {
 
 .contact-information p {
   font-size: 1.25rem;
+  /* center text with icon */
   padding-top: 0.55rem;
 }
 
@@ -567,7 +654,7 @@ html {
   display: inline-block;
   font-size: 3rem;
   margin-right: 1.5rem;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   color: var(--optional-color-2);
 }
 
